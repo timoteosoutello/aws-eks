@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
     acl                  = "bucket-owner-full-control"
-    bucket               = "terraform-state"
+    bucket               = "timoteo-test-terraform"
     encrypt              = true
     key                  = "tsoutello-eks"
-    region               = var.region
+    region               = "sa-east-1"
     workspace_key_prefix = "tsoutello-eks"
   }
 }

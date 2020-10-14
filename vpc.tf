@@ -1,8 +1,3 @@
-variable "region" {
-  default     = "sa-east-1"
-  description = "AWS region"
-}
-
 provider "aws" {
   version = ">= 2.28.1"
   region  = var.region
@@ -11,7 +6,7 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "training-eks-tsoutello"
+  cluster_name = var.cluster_name
 }
 
 module "vpc" {

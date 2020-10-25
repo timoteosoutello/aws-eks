@@ -5,10 +5,6 @@ provider "aws" {
 
 data "aws_availability_zones" "available" {}
 
-locals {
-  cluster_name = var.cluster_name
-}
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.6.0"
@@ -22,11 +18,11 @@ module "vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
   }
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
   }
 

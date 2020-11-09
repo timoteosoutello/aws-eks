@@ -3,13 +3,13 @@
 ## Terraform
 
 **Planning**:
-terraform plan -var-file dev.tfvars -var-file terraform.tfvars
+terraform plan -var-file dev.tfvars
 
 **Applying**:
-terraform apply -var-file dev.tfvars -var-file terraform.tfvars
+terraform apply -var-file dev.tfvars
 
 **Destroying**:
-terraform destroy -var-file dev.tfvars -var-file terraform.tfvars
+terraform destroy -var-file dev.tfvars
 
 **References**:
 
